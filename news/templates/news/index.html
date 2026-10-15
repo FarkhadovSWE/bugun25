@@ -7,7 +7,7 @@
 </head>
 <body>
     {% for category in categories %}
-        <h3>{{ category }}</h3>
+        <h3><a href="/news/category/{{ category }}/">{{ category }}</a></h3>
     {% endfor %}
 
     <h1>Latest news...</h1>

@@ -19,3 +19,9 @@ def detail(request, news_id):
     context = {'news': news}
     return render(request, "news/detail.html", context)
 
+
+def category(request, selected_category):
+    category_news = News.objects.filter(category__name=selected_category)
+    print(category_news)
+    context = {'category_news': category_news, 'selected_category': selected_category}
+    return render(request, "news/category.html", context)
