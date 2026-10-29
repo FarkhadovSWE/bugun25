@@ -11,6 +11,11 @@ class Category(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
+    image = models.ImageField(
+        upload_to='news/',
+        blank=True,
+        null=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     was_published = models.BooleanField(default=False)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="news")
